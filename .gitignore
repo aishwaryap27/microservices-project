@@ -1,0 +1,19 @@
+# Java / Maven build files
+**/target/
+
+# IntelliJ IDEA
+**/.idea/
+**/*.iml
+
+# Sensitive configuration
+**/src/main/resources/application.properties
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
