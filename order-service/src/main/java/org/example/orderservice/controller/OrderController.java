@@ -5,6 +5,7 @@ import org.example.orderservice.entity.Order;
 import org.example.orderservice.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import jakarta.validation.Valid;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class OrderController {
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
+
     @GetMapping
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
@@ -28,8 +30,9 @@ public class OrderController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
     @PostMapping
-    public Order createOrder( @Valid @RequestBody OrderRequest request) {
+    public Order createOrder(@Valid @RequestBody OrderRequest request) {
         return orderService.createOrder(request);
     }
 }
